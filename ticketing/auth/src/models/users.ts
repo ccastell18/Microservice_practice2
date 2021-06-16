@@ -27,6 +27,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   }
+},{
+  //formatting the return data
+  toJSON: {
+    transform(doc, ret) {
+      ret.id= ret._id;
+      delete ret._id;
+      delete ret.password;
+      delete ret.__v;
+    }
+  }
 });
 
 //not using arrow function so we can incorporate 'this' attribute
