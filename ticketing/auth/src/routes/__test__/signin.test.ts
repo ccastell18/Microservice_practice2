@@ -30,7 +30,7 @@ it('fails when an incorrect password is supplied', async () =>{
 })
 
 it('it responds with a cookie when sucessfully signed in', async () =>{
-  const response = await request(app)
+   const response = await request(app)
     .post('/api/users/signup')
     .send({
       email: "test@test.com",
