@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
-const BootStrap = ({Component, pageProps}) =>{
+const App = ({Component, pageProps}) =>{
   return <Component {...pageProps}/>
 }
 
-export default BootStrap
+export default App
