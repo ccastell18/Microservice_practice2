@@ -1,6 +1,6 @@
 import {useState} from 'react'
-import axios from 'axios'
-import useRequest from '../../hooks/use-request'
+import useRequest from '../../hooks/use-request';
+import Router from 'next/router'
 
 const SignUp = () =>{
   const [email, setEmail] = useState('')
@@ -10,20 +10,17 @@ const SignUp = () =>{
     method: 'post',
     body: {
       email, password
-    }
+    },
+    onSuccess: () => Router.push('/')
   })
 
   const onSubmit = async e =>{
     e.preventDefault();
 
+
     doRequest()
   }
    
-    
-
-   
-  
-
   return (
   <form onSubmit={onSubmit}>
       <h1>SignUp</h1>
